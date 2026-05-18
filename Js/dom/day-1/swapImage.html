@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <img id="img1" width="500" src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg" alt="">
+         <img id="img2" width="500" src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg" alt="">
+         <br/>
+         <button onclick="swapImage()">Swap Image</button>
+</body>
+<script>
+    let img1Element=document.getElementById("img1")
+    //<img id="img1" width="500" src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg" alt="">
+    let img2Element=document.getElementById("img2")
+
+    function swapImage(){
+        let img1Path=img1Element.src 
+        //https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg
+         let img2Path=img2Element.src 
+         //https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg
+
+         img1Element.src=img2Path
+         img2Element.src=img1Path
+
+        // console.log(img1Path);
+        // console.log(img2Path);
+        
+   }
+
+  
+</script>
+</html>

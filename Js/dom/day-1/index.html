@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="heading">
+        Welcome  <u>to</u> WS
+        
+        <!-- //Text -->
+
+        <!-- Text + Tag -->
+    </h1>
+    <p id="para">
+        Welcome
+    </p>
+    <img 
+    id="img1" 
+    width="300" 
+    height="300" 
+    src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg" 
+    alt=""
+    >
+
+
+</body>
+<script>
+    let h1Element= document.getElementById("heading")
+    let paraElement=document.getElementById("para")
+    let imgElement=document.getElementById("img1")
+
+    h1Element.innerHTML="Hello World"
+
+//     console.log(h1Element);
+//     console.log(h1Element.innerHTML);
+//     // Welcome  <u>to</u> WS
+//    console.log(h1Element.innerText);
+//     //  welcome to ws
+//      console.log(paraElement);
+
+//        console.log(paraElement.innerHTML);
+//        console.log(paraElement.innerText);
+       
+     console.log(imgElement);
+    console.log(imgElement.src);
+    //https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-06.jpg
+     console.log(imgElement.width);
+    //  console.log(imgElement.innerHTML);
+     
+    imgElement.src="https://uptownskylla.in/wp-content/uploads/2019/10/05-Contener-No-3rd-10.jpg"
+     imgElement.width="500"
+    
+</script>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+</head>
+<body>
+	<div class="overLay"></div>
+	<div class="enquiryModal ">
+		<h3>Enquire Now <span>&times;</span>  </h3>
+		<form action="">
+			<p>
+							Feel free to contact us if you need any assistance, any help or another question.
+
+			</p>
+
+			<div class="inputOuter">
+				<input type="text" placeholder="Name">
+			</div>
+
+			<div class="inputOuter">
+				<input type="email" placeholder="Email">
+			</div>
+			
+			<div class="inputOuter">
+				<input type="text" placeholder="Phone">
+			</div>
+			<div class="inputOuter">
+				<button>Enquire</button>
+			</div>
+
+		</form>
+	</div>
+
+
+	<header>
+		<div class="headerMid">
+			<figure>
+				<img src="images/logo.svg" width="204">
+			</figure>
+			<div class="btnOuter">
+				<button>Chat with Us</button>
+				<button id="enBTN">Enquire Now</button>
+			</div>
+		</div>
+	</header>
+
+	<section class="counterSection">
+		<div class="counterMid">
+			<div class="counterItem">
+				<h3>1000+</h3>
+				<p>Students Trained</p>
+			</div>
+			<div class="counterItem">
+				<h3>1000+</h3>
+				<p>Students Trained</p>
+			</div>
+			<div class="counterItem">
+				<h3>1000+</h3>
+				<p>Students Trained</p>
+			</div>
+			<div class="counterItem">
+				<h3>1000+</h3>
+				<p>Students Trained</p>
+			</div>
+			<div class="counterItem">
+				<h3>1000+</h3>
+				<p>Students Trained</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="keyHighlights">
+		<div class="keyHighlightsMid">
+			<h2>Key Highlights of the Course</h2>
+			<p>Lorem ipsum dolor sit amet consectetur. Imperdiet tellus ut ornare pharetra leo vestibulum at orci.</p>
+
+			<div class="keyHighlightRow">
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+				<div class="keyHighlightItem">
+					<figure>
+						<img src="images/Frame 352.png">
+					</figure>
+					<div>
+						<h3>Assignments & Modules tests</h3>
+						<p>Test your knowledge</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+
+
+
+</body>
+<script>
+	let enBTN=document.querySelector("#enBTN")
+	let enquiryModal=document.querySelector(".enquiryModal")
+	let closeBtn=document.querySelector(".enquiryModal span")
+	let overLay=document.querySelector(".overLay")
+
+	enBTN.addEventListener(
+		"click",
+		()=>{
+			enquiryModal.classList.add("showModal")
+			overLay.classList.add("overLayShow")
+		}
+	)
+
+	closeBtn.addEventListener(
+		"click",
+		()=>{
+			enquiryModal.classList.remove("showModal")
+			overLay.classList.remove("overLayShow")
+		}
+	)
+
+
+	//map(),filter(),reduce(),find()
+	
+</script>
+</html>

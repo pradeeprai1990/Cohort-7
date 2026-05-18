@@ -1,0 +1,43 @@
+body{
+	margin: 0px;
+	font-family: sans-serif;
+}
+
+
+.bannerSection{
+	width: 100%;
+	border: 1px solid black;
+	height: 500px;
+	box-sizing: border-box;
+	/*background-image: url(../images/logo.png);
+	background-repeat: no-repeat;
+	background-position: top center;*/
+	background: url(../images/logo.png) no-repeat top left ;
+}
+
+
+
+.highlightsSection{
+	width: 100%;
+	padding: 50px 0px;
+	background-color: lightyellow;
+}
+
+.highlightsSection h2{
+	margin: 0px;
+	font-family: arial;
+	text-align: center;
+}
+
+.highlightsMid{
+	width: 1170px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}
+
+.highlightItem{
+	width: 20%;
+	text-align: center;
+}

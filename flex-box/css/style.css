@@ -1,0 +1,129 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+.coachingSection{
+	width: 100%;
+	padding: 40px 0px;
+	background: #ccc;
+}
+.coachingSection h3{
+	color: red;
+	text-align: center;
+}
+.coachingSection h2{
+	text-align: center;
+	font-size: 35px;
+	margin-top: 20px;
+}
+
+.coachingMid{
+	width: 1320px;
+	margin: auto;
+	margin-top: 30px;
+	display: flex;
+	flex-wrap: wrap;
+	
+	
+	flex-direction: row;
+	justify-content: space-between; /*width*/
+	align-items:center ;           /*height*/
+
+	/*flex-direction: column;*/
+
+	/*justify-content: center; /*height*/
+	align-items: ;           /*width*/*/
+
+
+	/*flex-direction: column;*/
+
+}
+
+.coachingMid figure{
+	flex-basis: 23%;
+	background: white;
+	border: 1px solid red;
+}
+.coachingMid figure img{
+	width: 100%;
+}
+
+.coachingContent{
+	padding:10px;
+}
+
+.aboutSection{
+	width: 100%;
+	padding: 50px 0px;
+}
+
+.aboutMid{
+	width: 1320px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.aboutMid figure{
+	flex-basis: 48%;
+}
+.aboutMid figure img{
+	width: 100%;
+}
+
+.aboutMid article{
+	/*display: flex;
+	flex-direction: column;
+	gap: 15px;*/
+	flex-basis: 48%;
+	/*align-items: flex-start;*/
+}
+.aboutMid article h1{
+	margin-bottom: 20px;
+}
+.aboutMid article p{
+	margin-bottom: 10px;
+}
+
+.discoverSolachey{
+	background: lightcoral;
+	width: 100%;
+	padding: 50px 0px;
+}
+
+.discoverSolachey h2{
+	text-align: center;
+}
+
+.discoverMid{
+	width: 1320px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 40px;
+}
+
+.discoverItem1{
+	flex-basis: 33.3%;
+	background: url("https://lumo.ae/wp-content/uploads/2022/07/P3.jpg") center;
+	background-size: cover;
+	height: 300px;
+}
+
+.discoverTrans{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	height: 100%;
+	background: #00000078;
+}
+.discoverTrans h3{
+	font-size:22px;
+}
