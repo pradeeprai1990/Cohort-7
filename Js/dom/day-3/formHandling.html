@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        Num1<input type="text" id="num1">
+        <button>Save</button>
+        Output <input type="text" id="output">
+</body>
+<script>
+    let btn=document.querySelector("button")
+    let num1Input=document.querySelector("#num1")
+    let outPut=document.querySelector("#output")
+
+    btn.addEventListener(
+        "click",
+        ()=>{
+            let num1Value= Number(num1Input.value)
+
+            if(num1Value%2==0){
+                outPut.value="Even Number"
+            }
+            else{
+                 outPut.value="Odd Number"
+            }
+        }
+    )
+
+</script>
+</html>
