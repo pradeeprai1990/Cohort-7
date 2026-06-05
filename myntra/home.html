@@ -7,8 +7,26 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 	<link rel="stylesheet"  href="css/style.css"/>
+	<style>
+		.loading{
+			position: fixed;
+			height: 100%;
+			background-color: white;
+			width: 100%;
+			z-index: 999;
+			font-size: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
 </head>
 <body>
+
+	<div class="loading">
+		<h2>Loading..</h2>
+	</div>
+
 	<div class="floatIcon">
 		<button class="btnFixed1">Facebook</button>
 		<button class="btnFixed2">Google</button>
@@ -232,4 +250,34 @@
 <script>
   AOS.init();
 </script>
+<script>
+	let loadingElement=document.querySelector(".loading")
+	window.addEventListener(
+		"load",
+		()=>{
+			
+			loadingElement.style.display="none"
+			
+			
+		}
+	)
+
+	let header=document.querySelector("header")
+	window.addEventListener(
+		"scroll",
+		(event)=>{
+			
+			if(window.scrollY>=300){
+				header.classList.add("headerFixed")
+			}
+			else{
+				header.classList.remove("headerFixed")
+			}
+			
+		}
+	)
+
+</script>
+
+
 </html>

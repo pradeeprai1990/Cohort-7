@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            padding: 40px 20px;
+            color: #1f2937;
+        }
+
+        .section-wrapper {
+
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+            font-size: 32px;
+            color: #0f172a;
+        }
+
+        .layout {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .form-card {
+            flex-basis: 25%;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .table-card {
+            flex: 1;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            background-color: #ffffff;
+        }
+
+        .form-group input:focus {
+            border-color: #2563eb;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background-color: #2563eb;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #e0ecff;
+            color: #0f172a;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-wrapper">
+        <h1 class="section-title">User Information</h1>
+
+        <div class="layout">
+            <div class="form-card">
+                <h2 class="card-title">Form</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+
+            <div class="table-card">
+                <h2 class="card-title">Display Data</h2>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+
+    //get value in Localstorage - >JSON->Array
+
+    let userList =
+        localStorage.getItem("USERLIST") //null,undefined
+            ?
+            JSON.parse(localStorage.getItem("USERLIST"))
+            :
+            []
+        ;
+    // console.log(userList);
+
+    // if(10){
+
+    // }
+
+    let formElement = document.querySelector("form")
+    formElement.addEventListener(
+        "submit",
+        (event) => {
+            event.preventDefault()
+            let obj = {
+                name: event.target.name.value,
+                email: event.target.email.value,
+                phone: event.target.phone.value
+            }
+
+            userList.push(obj)
+
+            // console.log(userList);
+            //userList -- Array ->Covert JSON ->
+
+            localStorage.setItem("USERLIST", JSON.stringify(userList))
+            // alert("Data Saved")
+
+            displayData()
+
+            event.target.reset()
+
+
+
+        }
+    )
+
+    let tbodyElement = document.querySelector("tbody")
+
+    let displayData = () => {
+        let userData =
+            localStorage.getItem("USERLIST") //null,undefined
+                ?
+                JSON.parse(localStorage.getItem("USERLIST"))
+                :
+                []
+            ;
+
+        let list = ''
+        userData.forEach(
+            (obj) => {
+                // console.log(obj);
+                list += `<tr>
+                                <td>  ${obj.name} </td>
+                                <td>${obj.email}</td>
+                                <td>${obj.phone}</td>
+                            </tr>`
+
+            }
+        )
+
+        tbodyElement.innerHTML = list
+
+
+    }
+
+    displayData()
+
+    // let obj={
+    //     name:"pradeep"
+    // }
+
+    // console.log(obj.name);
+
+
+
+    let cartObj = [
+        {
+            name: "Iphone 14 Pro Max",
+            price: 150000,
+            quantity: 2
+        },
+        {
+            name: "Macbook Pro 16 inch",
+            price: 250000,
+            quantity: 1
+        },
+        {
+            name: "Apple Watch Series 8",
+            price: 50000,
+            quantity: 1
+        },
+        {
+            name: "Airpods Pro 2nd Gen",
+            price: 30000,
+            quantity: 3
+        },
+        {
+            name: "iPad Pro 12.9 inch",
+            price: 120000,
+            quantity: 2
+        }
+    ]
+
+
+    let totol = cartObj.reduce((tot, obj) => tot += obj.price * obj.quantity, 0)
+
+    console.log(totol);
+
+    let filterData = cartObj.filter((obj) => obj.price)
+
+    console.log(filterData);
+
+
+
+
+</script>
+
+</html>
